@@ -14,7 +14,7 @@ module Soulmate
     end
     
     get '/' do
-      MultiJson.encode({ :soulmate => Soulmate::Version::STRING, :status   => "ok" })
+      MultiJson.dump({ :soulmate => Soulmate::Version::STRING, :status   => "ok" })
     end
     
     get '/search' do
@@ -30,7 +30,7 @@ module Soulmate
         results[type] = matcher.matches_for_term(term, :limit => limit)
       end
       
-      MultiJson.encode({
+      MultiJson.dump({
         :term    => params[:term],
         :results => results
       })
@@ -38,7 +38,7 @@ module Soulmate
     
     not_found do
       content_type 'application/json', :charset => 'utf-8'
-      MultiJson.encode({ :error => "not found" })
+      MultiJson.dump({ :error => "not found" })
     end
     
   end
