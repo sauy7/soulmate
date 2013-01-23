@@ -17,3 +17,9 @@ pkg
 test/db/*.rdb
 
 Gemfile.lock
+
+# rvm
+.rvmrc
+
+# Rubymine
+.idea

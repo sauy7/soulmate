@@ -48,7 +48,7 @@ module Soulmate
     def remove(item)
       prev_item = Soulmate.redis.hget(database, item["id"])
       if prev_item
-        prev_item = MultiJson.decode(prev_item)
+        prev_item = MultiJson.load(prev_item)
         # undo the operations done in add
         Soulmate.redis.pipelined do
           Soulmate.redis.hdel(database, prev_item["id"])
