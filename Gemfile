@@ -10,4 +10,4 @@ end
 gem 'redis',      '~> 3.0.2'
 gem 'vegas',      '>= 0.1.0'
 gem 'sinatra',    '>= 1.0'
-gem 'multi_json', '~> 1.5.0'
+gem 'multi_json', '~> 1.6.0'
